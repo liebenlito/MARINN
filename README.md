@@ -219,6 +219,51 @@ Keep quick runs and full runs in separate directories. Reusing an output directo
 
 Fixed seeds support repeatable sampling and initialization. Numerical results and wall-clock measurements can still vary across package versions, processors, thread counts, and system load. Full runs involve repeated training and dense derivative evaluations, so their duration depends on the selected studies and available CPU resources.
 
+### GPU Execution Guide for MARINN
+PyTorch models and computational grids automatically use CUDA when it is
+available. Otherwise, execution falls back to the CPU. GPU execution requires
+a CUDA-enabled installation of PyTorch and a compatible NVIDIA driver.
+
+To run a short validation experiment, execute:
+
+```powershell
+python run_experiments.py --experiment heat_loss --quick --device cuda
+```
+
+To run all experiments on the GPU, execute:
+
+```powershell
+python run_experiments.py --device cuda
+```
+
+Explicit GPU selection is also supported by `run_fair2x2_burgers.py`:
+
+```powershell
+python run_fair2x2_burgers.py --seed 2026 --device cuda:0
+```
+
+For the two-dimensional scripts or programmatic use through Python imports,
+set the environment variable before starting Python:
+
+```powershell
+$env:MARINN_DEVICE = "cuda:0"
+python marinn_2d_production_v2_fixed.py
+python marinn_2d_heat_credibility.py
+```
+
+Use `cpu` to require CPU execution or `auto` to enable automatic device selection.
+An explicit request for CUDA raises an error if CUDA is unavailable.
+
+Randomized grids are generated using a CPU random number generator and then
+transferred to the model's device. This preserves consistent collocation samples
+across devices. NumPy conversions and the NumPy/SciPy reference solvers continue
+to execute on the CPU. In particular, `validate_allen_cahn_reference.py` remains
+a CPU-based NumPy/SciPy reference solver.
+
+Training scripts write results to `outputs/` by default. For the two-dimensional
+scripts, the output directory can be configured through the `MARINN_OUT`
+environment variable.
+
 ### Troubleshooting
 
 - **Missing Python packages:** Activate the environment and install dependencies with `python -m pip install numpy pandas scipy matplotlib torch`.
