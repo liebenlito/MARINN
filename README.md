@@ -1,6 +1,6 @@
 # MARINN — Supplementary Materials
 
-Data files, Python source, model checkpoints, and figures accompanying **Maximal-Regularity-Informed Neural Networks: Residual-Based Error Control for Parabolic Problems**.
+Data files, Python source, model checkpoints, and figures accompanying **Maximal-Regularity-Informed Neural Networks: Stability-Aligned Residual Assessment and Training for Parabolic PDEs**.
 
 ## Folder organization
 
