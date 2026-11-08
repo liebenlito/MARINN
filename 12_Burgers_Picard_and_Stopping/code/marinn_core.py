@@ -142,7 +142,8 @@ def mixed_norm(r: Tensor, pack, q=4):
     return torch.sqrt(mixed_objective(r,pack,q=q))
 
 def flat_l4_objective(r: Tensor):
-    return torch.mean(torch.abs(r)**4)
+    """Degree-two, homogeneity-matched flat L4 residual objective."""
+    return torch.mean(torch.abs(r)**4)**0.5
 
 def residual_heat(model, pack, cfg):
     u,ut,ux,uxx,x,t = derivatives(model,pack,heat_u0)
