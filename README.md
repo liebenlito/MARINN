@@ -219,7 +219,7 @@ Keep quick runs and full runs in separate directories. Reusing an output directo
 
 Fixed seeds support repeatable sampling and initialization. Numerical results and wall-clock measurements can still vary across package versions, processors, thread counts, and system load. Full runs involve repeated training and dense derivative evaluations, so their duration depends on the selected studies and available CPU resources.
 
-### GPU Execution Guide for MARINN
+## GPU Execution Guide for MARINN
 PyTorch models and computational grids automatically use CUDA when it is
 available. Otherwise, execution falls back to the CPU. GPU execution requires
 a CUDA-enabled installation of PyTorch and a compatible NVIDIA driver.
