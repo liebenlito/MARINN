@@ -10,7 +10,7 @@ Folders `01`–`14` follow the numerical experiments and supporting controls in 
 
 Original filenames, CSV values, and source code are retained. Each script can be read alongside the data files for its experiment. The `file_list.csv` file gives the SHA-256 digest and size of each included file.
 
-## Codes and Reproducity
+## Codes and Reproducibility
 
 This directory contains the implementation of the MARINN experiments for one- and two-dimensional partial differential equations. The scripts compare mixed-norm residual training with mean-squared residual training and related controls, including direct nonlinear optimization and Picard iteration.
 
