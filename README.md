@@ -1,4 +1,4 @@
-# MARINN — Supplementary Materials
+# Maximal-Regularity-Informed Neural Networks: Stability-Aligned Residual Assessment and Training for Parabolic PDEs
 
 **Authors:** Suma Inna, Muhaza Libenlito, and Hadi Susanto
 
