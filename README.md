@@ -1,14 +1,17 @@
 # MARINN — Supplementary Materials
 
-Data files, Python source, model checkpoints, and figures accompanying **Maximal-Regularity-Informed Neural Networks: Stability-Aligned Residual Assessment and Training for Parabolic PDEs**.
+**Authors:** Suma Inna, Muhaza Libenlito, and Hadi Susanto
 
-## Folder organization
+This archive contains the code, numerical results, figures, and selected checkpoints for the heat, Burgers, and Allen–Cahn experiments reported in the paper.
 
-Folders `01`–`14` follow the numerical experiments and supporting controls in the manuscript. Experimental measurements are in each folder’s `data/` subfolder. Experiment-specific scripts, where supplied, are in its `code/` subfolder. Shared numerical routines are in the top-level `code/` directory.
+## Contents
 
-`figures/` contains the manuscript figures. `checkpoints/heat_1d/` contains the five-seed trained model weights and associated run histories. `requirements.txt` lists Python dependencies.
-
-Original filenames, CSV values, and source code are retained. Each script can be read alongside the data files for its experiment. The `file_list.csv` file gives the SHA-256 digest and size of each included file.
+- `01_Heat_1D/`–`14_Heat_q_Sensitivity/`: experiment data and associated scripts.
+- `code/`: shared routines and experiment runners.
+- `figures/`: figures from the experiments.
+- `checkpoints/heat_1d/`: trained models and histories.
+- `requirements.txt`: Python dependencies.
+- `file_list.csv`: file inventory with SHA-256 checksums.
 
 ## Codes and Reproducibility
 
@@ -283,3 +286,6 @@ environment variable.
 - **Long runs or high memory use:** Start with a single quick study and one seed. The standalone 2D scripts do not provide a quick flag; reduce their source-level settings only for execution checks and record those changes.
 - **Plotting issues on a headless machine:** Set `MPLBACKEND=Agg` before running scripts that import Matplotlib. In PowerShell, use `$env:MPLBACKEND = "Agg"`; in Bash, use `export MPLBACKEND=Agg`.
 
+## Reference
+
+Suma Inna, Muhaza Libenlito, and Hadi Susanto, *Maximal-Regularity-Informed Neural Networks: Stability-Aligned Residual Assessment and Training for Parabolic PDEs*.
