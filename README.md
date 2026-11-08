@@ -218,8 +218,6 @@ The flat-L4-squared baseline uses `(mean(abs(R)**4))**0.5`. The archived CSVs an
 ```bash
 python verify_heat1d_flat_l4.py
 python verify_heat1d_flat_l4.py --retrain
-python verify_heat1d_flat_l4.py --device cpu
-python verify_heat1d_flat_l4.py --device cuda --retrain
 ```
 
 The first command checks the archived checkpoint metrics; `--retrain` also trains the five models again (1,200 Adam epochs per seed).
