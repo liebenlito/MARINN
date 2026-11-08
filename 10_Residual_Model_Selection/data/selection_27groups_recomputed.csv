@@ -1,0 +1,28 @@
+family,seed,n,selected,oracle,success,relative_regret
+Allen-Cahn conditioned,2030,2,PINN-Picard,PINN-Picard,1,0.0
+Allen-Cahn conditioned,2031,2,PINN-Picard,PINN-Picard,1,0.0
+Allen-Cahn unnormalized,2024,2,MARINN-Picard,MARINN-Picard,1,0.0
+Allen-Cahn unnormalized,2025,2,MARINN-Picard,MARINN-Picard,1,0.0
+Allen-Cahn unnormalized,2026,2,MARINN-Picard,PINN-Picard,0,0.061139291811310864
+Allen-Cahn unnormalized,2027,2,MARINN-Picard,MARINN-Picard,1,0.0
+Allen-Cahn unnormalized,2028,2,MARINN-Picard,MARINN-Picard,1,0.0
+Allen-Cahn unnormalized,2029,2,MARINN-Picard,MARINN-Picard,1,0.0
+Allen-Cahn unnormalized,2030,2,MARINN-Picard,MARINN-Picard,1,0.0
+Allen-Cahn unnormalized,2031,2,MARINN-Picard,MARINN-Picard,1,0.0
+Allen-Cahn unnormalized,2032,2,MARINN-Picard,MARINN-Picard,1,0.0
+Allen-Cahn unnormalized,2033,2,MARINN-Picard,MARINN-Picard,1,0.0
+Burgers balanced 2x2,2024,4,Direct-MARINN,Direct-MARINN,1,0.0
+Burgers balanced 2x2,2025,4,Direct-MSE,Direct-MSE,1,0.0
+Burgers balanced 2x2,2026,4,Direct-MSE,Direct-MSE,1,0.0
+Burgers balanced 2x2,2027,4,Direct-MSE,Direct-MSE,1,0.0
+Burgers balanced 2x2,2028,4,Direct-MARINN,Direct-MARINN,1,0.0
+Heat 1D loss-topology,2024,3,MARINN,MARINN,1,0.0
+Heat 1D loss-topology,2025,3,Flat-L4-squared,Flat-L4-squared,1,0.0
+Heat 1D loss-topology,2026,3,Flat-L4-squared,Flat-L4-squared,1,0.0
+Heat 1D loss-topology,2027,3,Flat-L4-squared,Flat-L4-squared,1,0.0
+Heat 1D loss-topology,2028,3,Flat-L4-squared,MARINN,0,0.004918194854090437
+Heat 2D conditioned,2024,3,Flat-L4-squared,Flat-L4-squared,1,0.0
+Heat 2D conditioned,2025,3,Flat-L4-squared,Flat-L4-squared,1,0.0
+Heat 2D conditioned,2026,3,MARINN,MARINN,1,0.0
+Heat 2D conditioned,2027,3,MARINN,MARINN,1,0.0
+Heat 2D conditioned,2028,3,MARINN,MARINN,1,0.0

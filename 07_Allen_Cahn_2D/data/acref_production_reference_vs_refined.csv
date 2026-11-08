@@ -1,0 +1,2 @@
+reference_used,refined_reference,relative_L2_difference,max_abs_difference
+"N=40, dt=0.001","N=81, dt=0.0005 restricted to N=40 nodes",2.2038756506929746e-09,4.727971569806755e-09

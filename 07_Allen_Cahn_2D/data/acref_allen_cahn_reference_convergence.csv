@@ -1,0 +1,4 @@
+study,coarse,fine,relative_L2_difference,max_abs_difference
+time refinement N=40,dt=0.002,dt=0.001,8.815467058556213e-09,1.8911752552863703e-08
+time refinement N=40,dt=0.001,dt=0.0005,2.2038697499295446e-09,4.727965685624724e-09
+space refinement dt=0.0005,N=40,N=81 restricted to N=40 nodes,2.2196115148085472e-14,5.595524044110789e-14
