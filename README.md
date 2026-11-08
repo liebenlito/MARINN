@@ -211,6 +211,19 @@ The script compares time steps `0.002`, `0.001`, and `0.0005` on a 40 × 40 inte
 
 Results are written to `reference_validation/allen_cahn_reference_convergence.csv` and `reference_validation/production_reference_vs_refined.csv`. Both files report relative L2 and maximum absolute differences. This script runs its calculations on import, so execute it directly rather than importing it solely to inspect its functions.
 
+### Flat-L4-squared verification
+
+The flat-L4-squared baseline uses `(mean(abs(R)**4))**0.5`. The archived CSVs and checkpoints retain their original values. The five-seed 1D heat checkpoint metrics use a 320 × 320 midpoint evaluation grid.
+
+```bash
+python verify_heat1d_flat_l4.py
+python verify_heat1d_flat_l4.py --retrain
+python verify_heat1d_flat_l4.py --device cpu
+python verify_heat1d_flat_l4.py --device cuda --retrain
+```
+
+The first command checks the archived checkpoint metrics; `--retrain` also trains the five models again (1,200 Adam epochs per seed).
+
 ### Interpreting and preserving results
 
 The 1D result tables include `rel_L2_exact` for relative solution error, `residual_L2tL4` for the mixed residual norm, derivative error norms, `E_MR`, and `max_residual`. In the shared 1D evaluator, `E_MR` is the time-derivative error norm plus the viscosity-weighted second spatial derivative error norm. The 2D scripts use their own evaluation routines and column names; interpret each table using the corresponding implementation.
@@ -226,19 +239,19 @@ a CUDA-enabled installation of PyTorch and a compatible NVIDIA driver.
 
 To run a short validation experiment, execute:
 
-```powershell
+```bash
 python run_experiments.py --experiment heat_loss --quick --device cuda
 ```
 
 To run all experiments on the GPU, execute:
 
-```powershell
+```bash
 python run_experiments.py --device cuda
 ```
 
 Explicit GPU selection is also supported by `run_fair2x2_burgers.py`:
 
-```powershell
+```bash
 python run_fair2x2_burgers.py --seed 2026 --device cuda:0
 ```
 

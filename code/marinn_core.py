@@ -108,22 +108,17 @@ def heat_forcing(x, t, nu):
 
 
 def burgers_exact(x, t, alpha=0.25):
-    return torch.exp(-t) * torch.sin(math.pi * x) + alpha * t * torch.exp(
-        -t
-    ) * torch.sin(2 * math.pi * x)
+    return torch.exp(-t) * torch.sin(math.pi * x) + alpha * t * torch.exp(-t) * torch.sin(2 * math.pi * x)
 
 
 def burgers_forcing(x, t, nu, alpha=0.25):
     u = burgers_exact(x, t, alpha)
     ut = -torch.exp(-t) * torch.sin(math.pi * x) + alpha * (1 - t) * torch.exp(
-        -t
-    ) * torch.sin(2 * math.pi * x)
+        -t) * torch.sin(2 * math.pi * x)
     ux = math.pi * torch.exp(-t) * torch.cos(
-        math.pi * x
-    ) + 2 * math.pi * alpha * t * torch.exp(-t) * torch.cos(2 * math.pi * x)
+        math.pi * x) + 2 * math.pi * alpha * t * torch.exp(-t) * torch.cos(2 * math.pi * x)
     uxx = -math.pi**2 * torch.exp(-t) * torch.sin(
-        math.pi * x
-    ) - 4 * math.pi**2 * alpha * t * torch.exp(-t) * torch.sin(2 * math.pi * x)
+        math.pi * x) - 4 * math.pi**2 * alpha * t * torch.exp(-t) * torch.sin(2 * math.pi * x)
     return ut + u * ux - nu * uxx
 
 
@@ -201,6 +196,8 @@ def objective_from_residual(r, pack, loss_name="mse", q=4):
         return mixed_objective(r, pack, q=q)
     if loss_name == "flat_l4":
         return flat_l4_objective(r)
+    if loss_name == "flat_l4_squared":
+        return torch.sqrt(flat_l4_objective(r))
     if loss_name.startswith("q"):
         qq = int(loss_name[1:])
         return mixed_objective(r, pack, q=qq)
